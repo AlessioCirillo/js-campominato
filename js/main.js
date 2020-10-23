@@ -26,6 +26,11 @@ while ( listUtente.length < sizeUtente){
     
     if (listUtente.includes(numeroUtente) === false){
          listUtente.push(numeroUtente);
-  }
+    } else {
+        alert ('Hai già inserito questo nuemro')
+    }
 }
 console.log(listUtente);
+
+
+//CONTROLLO DATI INSERITI
