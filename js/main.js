@@ -1,13 +1,14 @@
+
 //CREAZIONE BOMBE
 var listBomb = [];
-var size = 2;
+var nBombe = 2;
 
-while (listBomb.length < size){
+while (listBomb.length < nBombe){
 
-    var number = genRandom ( 100, 1 );
+    var bombe = genRandom ( 100, 1 );
 
-    if (listBomb.includes(number) === false){
-          listBomb.push(number);
+    if (listBomb.includes(bombe) === false){
+          listBomb.push(bombe);
     }
 }
 console.log(listBomb);
@@ -20,17 +21,32 @@ function genRandom(max, min) {
 //RICHIESTA DATI UTENTE
 var listUtente = [];
 var sizeUtente = 6;
+var counter = [];
 
 while ( listUtente.length < sizeUtente){
+
     var numeroUtente = parseInt ( prompt ('inserire un numero compreso tra 1 e 100') );
     
-    if (listUtente.includes(numeroUtente) === false){
-         listUtente.push(numeroUtente);
+    if (listUtente.includes(numeroUtente) === false) {
+        listUtente.push(numeroUtente);
+        counter ++;
+        console.log('il tuo punteggio',counter);
     } else {
         alert ('Hai già inserito questo nuemro')
     }
+
+    if(listBomb.includes(numeroUtente)){
+        alert ('hai perso.')
+        document.getElementById('punteggio').innerHTML ='il tuo punteggio è: ' + (counter - 1);
+        break;
+    }
 }
+
 console.log(listUtente);
+document.getElementById('punteggio').innerHTML ='hai vinto e hai totalizzato un punteggio di: ' + (counter);
 
 
-//CONTROLLO DATI INSERITI
+
+
+
+
