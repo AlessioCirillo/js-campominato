@@ -39,11 +39,13 @@ while ( listUtente.length < sizeUtente){
         alert ('hai perso.')
         document.getElementById('punteggio').innerHTML ='il tuo punteggio è: ' + (counter - 1);
         break;
+    } else {
+        document.getElementById('punteggio').innerHTML ='hai vinto e hai totalizzato un punteggio di: ' + (counter);
     }
 }
 
 console.log(listUtente);
-document.getElementById('punteggio').innerHTML ='hai vinto e hai totalizzato un punteggio di: ' + (counter);
+
 
 
 
